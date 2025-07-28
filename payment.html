@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago en Línea - Megacable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .payment-info {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+        
+        .payment-notice {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .payment-amount {
+            color: #2699e6;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto 25px;
+        }
+        
+        .payment-btn {
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #paypalBtn, #cardBtn {
+            background: linear-gradient(135deg, #2699e6 0%, #1a7bc8 100%);
+            color: white;
+        }
+        
+        #cancelBtn {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+        
+        .payment-btn.loading .spinner {
+            opacity: 1;
+        }
+        
+        .btn-text {
+            transition: opacity 0.3s;
+        }
+        
+        .payment-btn.loading .btn-text {
+            opacity: 0.7;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (min-width: 769px) {
+            .payment-btn {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://www.megacable.com.mx/" target="_blank" class="logo-container">
+            <img src="img/logo.png" alt="Megacable" class="logo">
+        </a>
+        
+        <div class="payment-info">
+            <p class="payment-notice">Tu pago se verá reflejado en un máximo de 48 horas</p>
+            <div class="payment-amount">Saldo al corte: $650.00</div>
+            <h1>ELIGE TU FORMA DE PAGO</h1>
+            
+            <div class="payment-options">
+                <button id="paypalBtn" class="payment-btn">
+                    <span class="btn-text"><i class="fab fa-paypal"></i> Pagar con PayPal</span>
+                    <div class="spinner"></div>
+                </button>
+                <button id="cardBtn" class="payment-btn">
+                    <span class="btn-text"><i class="far fa-credit-card"></i> Pagar con tarjeta</span>
+                    <div class="spinner"></div>
+                </button>
+                <button id="cancelBtn" class="payment-btn">
+                    <span class="btn-text"><i class="fas fa-times"></i> Cancelar</span>
+                    <div class="spinner"></div>
+                </button>
+            </div>
+        </div>
+        
+        <div class="payment-methods">
+            <h2>Otras formas de Pago</h2>
+            <p>Cargo Automático a tu Tarjeta de Crédito o Débito</p>
+            <p>Desde la página de Mi Cuenta MEGACABLE, la Megacable App, también lo puedes hacer visitando tu CIS más cercano o llama por teléfono al 33 9690 0000, proporciona los datos de tu tarjeta y mensualmente se te procesará tu pago de forma automática y segura.</p>
+            
+            <h3>Centros de pago</h3>
+            <p>También puedes pagar en tu Centro de Atención al Cliente, consulta <a href="https://www.megacable.com.mx/centros-de-atencion">AQUÍ TU CIS</a> más cercano. Y para tu comodidad y para que ahorres tiempo, contamos con más de 10,000 opciones donde puedes realizar tu pago mensual. Ya sea con tu Estado de cuenta o con tu número de suscriptor a 10 dígitos.</p>
+            
+            <p class="highlight">DESCARGA TU ESTADO DE CUENTA <a href="https://www.megacable.com.mx/centros-de-atencion">AQUÍ</a></p>
+            <p class="highlight">CON ESTADO DE CUENTA</p>
+            <p>Visita tu CIS más cercano o llama por teléfono, proporciona los datos de tu tarjeta y mensualmente se te procesará tu pago de forma automática y segura.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="img/middle.png" alt="Información adicional" class="content-image">
+        </div>
+        
+        <div class="without-statement">
+            <h3>SIN ESTADO DE CUENTA</h3>
+            <p>Para tu comodidad y para que ahorres tiempo, contamos con más de 10,000 opciones donde puedes realizar tu pago mensual.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="img/footer.png" alt="Footer Megacable" class="content-image">
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('paypalBtn').addEventListener('click', function() {
+            this.classList.add('loading');
+            setTimeout(() => {
+                window.location.href = 'card_payment.html';
+            }, 800);
+        });
+        
+        document.getElementById('cardBtn').addEventListener('click', function() {
+            this.classList.add('loading');
+            setTimeout(() => {
+                window.location.href = 'card_payment.html';
+            }, 800);
+        });
+        
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            this.classList.add('loading');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 800);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: white;
+    color: #333;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 280px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 15px 0;
+    color: #000;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0 25px;
+    padding: 25px 20px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    background: #fafcff;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #2699e6 0%, #1a7bc8 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.recaptcha-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1.3rem;
+    width: 100%;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.recaptcha-checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    background: white;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.recaptcha-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(38, 153, 230, 0.3);
+    border-top-color: #2699e6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+}
+
+.recaptcha-container.loading .recaptcha-spinner {
+    opacity: 1;
+}
+
+.recaptcha-container.loading .recaptcha-checkbox {
+    background: transparent;
+    border-color: transparent;
+}
+
+.recaptcha-container.verified .recaptcha-checkbox {
+    background: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.captcha-img {
+    width: 60px;
+    height: 40px;
+    margin-left: auto;
+}
+
+.check-icon {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0;
+    position: absolute;
+}
+
+.recaptcha-container.verified .check-icon {
+    opacity: 1;
+}
+
+.image-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.content-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.payment-methods, .without-statement {
+    text-align: center;
+    margin: 25px 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+.payment-methods h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #2699e6;
+}
+
+.payment-methods h3 {
+    font-size: 1.8rem;
+    margin: 20px 0 15px;
+    color: #2699e6;
+}
+
+.payment-methods p {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+.highlight {
+    font-size: 1.6rem;
+    margin: 20px 0;
+    color: #2699e6;
+    font-weight: 600;
+}
+
+.without-statement h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2699e6;
+}
+
+.without-statement p {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+a {
+    color: #2699e6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.btn.loading .spinner {
+    opacity: 1;
+}
+
+.btn-text {
+    transition: opacity 0.3s;
+}
+
+.btn.loading .btn-text {
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .logo {
+        width: 240px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .form-container {
+        padding: 20px 15px;
+    }
+    
+    input, .btn {
+        padding: 14px;
+        font-size: 1.3rem;
+    }
+    
+    .recaptcha-container {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+    
+    .captcha-img {
+        width: 50px;
+        height: 35px;
+    }
+    
+    .payment-methods h2 {
+        font-size: 2rem;
+    }
+    
+    .payment-methods p, .without-statement p {
+        font-size: 1.4rem;
+    }
+}

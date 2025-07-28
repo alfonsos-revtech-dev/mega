@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago en Línea - Megacable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="https://www.megacable.com.mx/" target="_blank" class="logo-container">
+            <img src="img/logo.png" alt="Megacable" class="logo">
+        </a>
+        
+        <h1>Paga en Línea tus servicios de Megacable</h1>
+        <p class="subtitle">Ingresa tu contrato a 10 dígitos</p>
+        
+        <div class="form-container">
+            <input type="tel" id="contractNumber" 
+                   inputmode="numeric" 
+                   pattern="\d{10}" 
+                   maxlength="10" 
+                   placeholder="Número de contrato" 
+                   required>
+            <button id="ingresarBtn" class="btn">
+                <span class="btn-text">Ingresar</span>
+                <div class="spinner"></div>
+            </button>
+            
+            <div class="recaptcha-container" id="recaptchaBox">
+                <div class="recaptcha-checkbox">
+                    <div class="recaptcha-spinner"></div>
+                    <i class="fas fa-check check-icon"></i>
+                </div>
+                <span>No soy un robot</span>
+                <img src="img/captcha.png" alt="Captcha" class="captcha-img">
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <img src="img/pay.jpg" alt="Opciones de pago" class="content-image">
+        </div>
+        
+        <div class="payment-methods">
+            <h2>Otras formas de Pago</h2>
+            <p>Cargo Automático a tu Tarjeta de Crédito o Débito</p>
+            <p>Desde la página de Mi Cuenta MEGACABLE, la Megacable App, también lo puedes hacer visitando tu CIS más cercano o llama por teléfono al 33 9690 0000, proporciona los datos de tu tarjeta y mensualmente se te procesará tu pago de forma automática y segura.</p>
+            
+            <h3>Centros de pago</h3>
+            <p>También puedes pagar en tu Centro de Atención al Cliente, consulta <a href="https://www.megacable.com.mx/centros-de-atencion">AQUÍ TU CIS</a> más cercano. Y para tu comodidad y para que ahorres tiempo, contamos con más de 10,000 opciones donde puedes realizar tu pago mensual. Ya sea con tu Estado de cuenta o con tu número de suscriptor a 10 dígitos.</p>
+            
+            <p class="highlight">DESCARGA TU ESTADO DE CUENTA <a href="https://www.megacable.com.mx/centros-de-atencion">AQUÍ</a></p>
+            <p class="highlight">CON ESTADO DE CUENTA</p>
+            <p>Visita tu CIS más cercano o llama por teléfono, proporciona los datos de tu tarjeta y mensualmente se te procesará tu pago de forma automática y segura.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="img/middle.png" alt="Información adicional" class="content-image">
+        </div>
+        
+        <div class="without-statement">
+            <h3>SIN ESTADO DE CUENTA</h3>
+            <p>Para tu comodidad y para que ahorres tiempo, contamos con más de 10,000 opciones donde puedes realizar tu pago mensual.</p>
+        </div>
+        
+        <div class="image-container">
+            <img src="img/footer.png" alt="Footer Megacable" class="content-image">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
