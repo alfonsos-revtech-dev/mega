@@ -156,15 +156,19 @@ input {
 .image-container {
     width: 100%;
     margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-image {
-    width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.payment-methods, .without-statement {
+.payment-methods, .without-statement, .payment-info {
     text-align: center;
     margin: 25px 0;
     width: 100%;
@@ -285,5 +289,11 @@ a {
     
     .payment-methods p, .without-statement p {
         font-size: 1.4rem;
+    }
+    
+    .middle-image .content-image,
+    .footer-image .content-image {
+        width: 95%;
+        max-width: none;
     }
 }
